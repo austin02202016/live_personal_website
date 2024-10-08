@@ -3,7 +3,6 @@
 import { useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Heart, Eye, MessageCircle } from "lucide-react"
-import { NavbarComponent } from "./navbar"
 
 const reels = [
   { id: "C8LX4tRxg2y", likes: 1500, views: 10000, comments: 200 },
