@@ -31,10 +31,10 @@ export default function LandingPage() {
       <main className="flex-grow flex flex-col items-center justify-start p-16 pt-10 md:pt-50 space-y-16">
         <div className="text-center space-y-8">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-            Hey, I'm Austin
+            Hey, I&apos;m Austin
           </h1>
           <div className="text-xl md:text-2xl">
-            <span>Currently I'm </span>
+            <span>Currently I&apos;m </span>
             <span className="font-bold text-2xl md:text-3xl text-primary transition-all duration-300 ease-in-out">
               {activities[currentActivity]}
             </span>
@@ -51,13 +51,13 @@ export default function LandingPage() {
 
         <div className="w-full max-w-6xl flex flex-col md:flex-row gap-12 md:gap-16">
           <div className="flex-1 space-y-4">
-            <h2 className="text-2xl font-bold text-center">What I'm up to these days</h2>
+            <h2 className="text-2xl font-bold text-center">What I&apos;m up to these days</h2>
             <ul className="list-disc pl-5 space-y-2 text-sm">
               <li>Promoting college entrepreneurship through <a href="https://open.spotify.com/show/6s4SW9OcCX16BCgEXStCJo" className="text-gray-400 hover:underline">Proof of Concept</a>, my podcast and media company</li>
               <li>Consultant for <a href="https://www.innovomarkets.com/" className="text-gray-400 hover:underline">Innovo Markets</a></li>
               <li>Caddying at the <a href="https://www.top100golfcourses.com/golf-course/old-elm" className="text-gray-400 hover:underline">Old Elm Club</a> in Lake Forest</li>
               <li>Member of <a href="https://www.pct-illinois.com/" className="text-gray-400 hover:underline">Phi Chi Theta Professional Business Fraternity</a></li>
-              <li>Growing and fostering UIUC's entrepreneurial community through biweekly hangouts</li>
+              <li>Growing and fostering UIUC&apos;s entrepreneurial community through biweekly hangouts</li>
               <li>Finance Major, Computer Science Minor w/ Concentration in Commercial Real Estate @ UIUC</li>
             </ul>
           </div>
