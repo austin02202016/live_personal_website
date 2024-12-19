@@ -2,25 +2,24 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from 'framer-motion'
 import { Code, Instagram, Linkedin, Podcast, Twitter, Github, Mail, Music, Coffee, Book, Briefcase, Rocket, Cpu, Globe, Camera, Pen } from 'lucide-react'
 
 const BackgroundIcon = ({ Icon, gridArea }: { Icon: React.ElementType, gridArea: string }) => (
   <div className="flex items-center justify-center" style={{ gridArea }}>
-    <Icon className="w-12 h-12 md:w-16 md:h-16 opacity-5" />
+    <Icon className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 opacity-5" />
   </div>
 )
 
 export default function HeroSection() {
-    const activities = [
-      "growing UIUC's entrepreneurship community",
-      "consulting for pre-seed startup Innovo",
-        "training to complete my first dunk",
-        "growing Illini Run Club",
-      "working on personal coding projects"
-    ]
+  const activities = [
+    "growing UIUC's entrepreneurship community",
+    "consulting for pre-seed startup Innovo",
+    "training to complete my first dunk",
+    "growing Illini Run Club",
+    "working on personal coding projects"
+  ]
 
   const [currentActivity, setCurrentActivity] = useState(0)
 
@@ -28,13 +27,13 @@ export default function HeroSection() {
     const timer = setInterval(() => {
       setCurrentActivity((prev) => (prev + 1) % activities.length)
     }, 3000) // Change activity every 3 seconds
-     return () => clearInterval(timer)
-  }, [activities.length]) // Added activities.length to the dependency array
+    return () => clearInterval(timer)
+  }, [activities.length])
 
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen text-black px-4 py-8 overflow-hidden">
       {/* Background Icons and Logos */}
-      <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4 pointer-events-none">
+      <div className="absolute inset-0 grid grid-cols-6 grid-rows-6 gap-4 pointer-events-none hidden sm:grid">
         <BackgroundIcon Icon={Code} gridArea="1 / 1" />
         <BackgroundIcon Icon={Instagram} gridArea="1 / 3" />
         <BackgroundIcon Icon={Linkedin} gridArea="1 / 5" />
@@ -51,7 +50,6 @@ export default function HeroSection() {
         <BackgroundIcon Icon={Globe} gridArea="5 / 3" />
         <BackgroundIcon Icon={Camera} gridArea="5 / 5" />
         <BackgroundIcon Icon={Pen} gridArea="6 / 2" />
-
       </div>
 
       {/* Main Content */}
@@ -59,12 +57,12 @@ export default function HeroSection() {
         className="text-center z-10 flex flex-col items-center"
         whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
       >
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-8">
           Hey, I&apos;m Austin :)
         </h1>
-        <div className="text-xl md:text-2xl mb-8">
+        <div className="text-lg sm:text-xl md:text-2xl mb-8">
           <span>Currently I&apos;m </span>
-          <div className="h-16 flex items-center justify-center">
+          <div className="h-16 flex items-center justify-center overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.span
                 key={currentActivity}
@@ -72,7 +70,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
-                className="font-bold text-2xl md:text-3xl absolute whitespace-nowrap" // Add the whitespace-nowrap class here
+                className="font-bold text-xl sm:text-2xl md:text-3xl truncate"
               >
                 {activities[currentActivity]}
               </motion.span>
@@ -81,22 +79,21 @@ export default function HeroSection() {
         </div>
         <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
           <a
-            className="bg-black text-white hover:bg-gray-800 text-lg py-2 px-6 rounded-full transition-colors"
+            className="bg-black text-white hover:bg-gray-800 text-base sm:text-lg py-2 px-6 rounded-full transition-colors"
             href="mailto:austin25@illinois.edu?subject=Subject%20Here&body=Body%20text%20here"
           >
             Start the Conversation
           </a>
           <Link href="/coding-projects">
-          <Button 
-            variant="outline" 
-            className="bg-white text-black border-black hover:bg-gray-100 text-lg py-2 px-6 rounded-full transition-colors"
-          >
-            Check out my work
-          </Button>
+            <Button 
+              variant="outline" 
+              className="bg-white text-black border-black hover:bg-gray-100 text-base sm:text-lg py-2 px-6 rounded-full transition-colors"
+            >
+              Check out my work
+            </Button>
           </Link>
         </div>
       </motion.div>
     </section>
   )
 }
-

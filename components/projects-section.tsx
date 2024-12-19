@@ -59,7 +59,7 @@ export function ProjectsSection() {
         >
           Projects
           </motion.h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16 space-y-4 md:space-y-0">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
@@ -67,7 +67,7 @@ export function ProjectsSection() {
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
+              className="group bg-white border border-gray-400 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
               <div className="aspect-video relative overflow-hidden">
                 <Image
