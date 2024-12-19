@@ -3,16 +3,13 @@
 import React from 'react'
 import { ChevronDown } from 'lucide-react'
 import { motion } from "framer-motion";
-import { useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer';
 
 export function AboutMeSection() {
 
-    const [isVisible, setIsVisible] = useState(false);
-
-    useEffect(() => {
-      const timer = setTimeout(() => setIsVisible(true), 500);
-      return () => clearTimeout(timer);
-    }, []);
+    const { ref, inView } = useInView({
+      triggerOnce: true, // Change this to false if you want the animation to trigger again whenever it comes in view
+    });
     
     const timelineEvents = [
     { year: 2003, event: 'Born in Elmwood Park to some great parents. Shoutout Mom and Dad' },
@@ -26,41 +23,53 @@ export function AboutMeSection() {
     ];
 
     return (
-      <div className="min-h-screen bg-white text-black font-sans">
-        <div className="container mx-auto px-[10%] py-16">
+      <motion.div className="min-h-screen bg-white text-black font-sans" ref={ref}>
+        <motion.div className="container mx-auto px-[10%] py-16">
           <motion.h2 
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 text-center mb-24"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 text-center mb-20"
             initial={{ opacity: 0, y: -20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
           >
             Deep Dive About Me
           </motion.h2>
-        <p className="text-xl mb-12 text-center max-w-2xl mx-auto">
-          Here&#39;s a detailed description of my life. Long story short - I&#39;ve been down a lot of different rabbit holes.
-        </p>
+          <motion.p className="text-xl mb-12 text-center max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            Here&#39;s a detailed description of my life. Long story short - I&#39;ve been down a lot of different rabbit holes.
+          </motion.p>
 
-        <div className="flex justify-center mb-8">
-          <ChevronDown className="animate-bounce w-8 h-8" />
-        </div>
+          <motion.div className="flex justify-center mb-8"
+            initial={{ opacity: 0, y: -20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            <ChevronDown className="animate-bounce w-8 h-8" />
+          </motion.div>
 
-        <div className="border border-gray-200 rounded-lg shadow-lg p-8 bg-white">
-          <div className="space-y-12">
-            {timelineEvents.map((item, index) => (
-              <div key={index} className="flex">
-                <div className="flex flex-col items-center mr-4">
-                  <div className="w-px h-full bg-gray-300"></div>
-                  <div className="w-4 h-4 rounded-full bg-black mt-1"></div>
+          <motion.div className="border border-gray-200 rounded-lg shadow-lg p-8 bg-white"
+            initial={{ opacity: 0, y: -20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="space-y-12">
+              {timelineEvents.map((item, index) => (
+                <div key={index} className="flex">
+                  <div className="flex flex-col items-center mr-4">
+                    <div className="w-px h-full bg-gray-300"></div>
+                    <div className="w-4 h-4 rounded-full bg-black mt-1"></div>
+                  </div>
+                  <div className="pb-8">
+                    <p className="text-2xl font-bold">{item.year}</p>
+                    <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: item.event }}></p>
+                  </div>
                 </div>
-                <div className="pb-8">
-                  <p className="text-2xl font-bold">{item.year}</p>
-                  <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: item.event }}></p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
+    )
 }

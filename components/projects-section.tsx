@@ -1,6 +1,6 @@
 'use client';
 
-import { Card, CardContent } from "@/components/ui/card"
+import { CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Github, LinkIcon } from 'lucide-react'
 import Image from "next/image"
@@ -14,7 +14,7 @@ const projects = [
   {
     id: "uiuc.io",
     title: "Oskee",
-    description: "chatbot matching prompts with UIUC students, built with Andrew Yacht",
+    description: "chatbot matching prompts with UIUC students, built with Andrew Yatzkan",
     image: "/uiuc.io_photo.png",
     liveUrl: "https://www.uiuc.io/",
     githubUrl: "https://github.com/austin02202016/uiuc_sage.git",

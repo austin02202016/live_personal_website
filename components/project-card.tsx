@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Github, LinkIcon, PlayCircle } from 'lucide-react'
 import Image from "next/image"
@@ -16,7 +15,6 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({
-  id,
   title,
   description,
   image,

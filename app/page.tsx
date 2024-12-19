@@ -1,11 +1,22 @@
+import { Inter } from 'next/font/google'
+import HeroSection from '@/components/hero_section'
+import ContentSection from '@/components/content_section'
 import { NavbarComponent } from "@/components/navbar"
-import LandingPage from "@/components/landing-page"
+import SectionComponent from '@/components/section_divider'
 
-export default function Page() {
+
+const inter = Inter({ subsets: ['latin'] })
+
+export default function LandingPage() {
   return (
-    <main className="min-h-screen">
-      <NavbarComponent />
-      <LandingPage />
-    </main>
+    <div className={`min-h-screen flex flex-col bg-white text-black ${inter.className}`}>
+      <main className="flex-grow flex flex-col">
+        <NavbarComponent />
+        <HeroSection />
+        <SectionComponent />
+        <ContentSection />
+      </main>
+    </div>
   )
 }
+
