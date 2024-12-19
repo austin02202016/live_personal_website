@@ -7,16 +7,13 @@ import SectionComponent from '@/components/section_divider'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function LandingPage() {
+export default function Page() {
   return (
-    <div className={`min-h-screen flex flex-col bg-white text-black ${inter.className}`}>
-      <main className="flex-grow flex flex-col">
-        <NavbarComponent />
-        <HeroSection />
-        <SectionComponent />
-        <ContentSection />
-      </main>
-    </div>
+    <main className="min-h-screen">
+      <NavbarComponent />
+      <HeroSection />
+      <SectionComponent />
+      <ContentSection />
+    </main>
   )
 }
-
