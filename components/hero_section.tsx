@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
+
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from 'framer-motion'
 import { Code, Instagram, Linkedin, Podcast, Twitter, Github, Mail, Music, Coffee, Book, Briefcase, Rocket, Cpu, Globe, Camera, Pen } from 'lucide-react'
@@ -58,7 +60,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.1, transition: { duration: 0.3 } }}
       >
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-          Hey, I&apos;m Austin
+          Hey, I&apos;m Austin :)
         </h1>
         <div className="text-xl md:text-2xl mb-8">
           <span>Currently I&apos;m </span>
@@ -84,12 +86,14 @@ export default function HeroSection() {
           >
             Start the Conversation
           </a>
+          <Link href="/coding-projects">
           <Button 
             variant="outline" 
             className="bg-white text-black border-black hover:bg-gray-100 text-lg py-2 px-6 rounded-full transition-colors"
           >
             Check out my work
           </Button>
+          </Link>
         </div>
       </motion.div>
     </section>

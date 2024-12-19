@@ -11,7 +11,7 @@ export function NavbarComponent() {
             Home
           </Link>
           <div className="flex space-x-1">
-            {['Short-Form', 'Coding Projects', 'About'].map((item) => (
+            {['Short-Form', 'Coding Projects', 'My Life'].map((item) => (
               <Link
                 key={item}
                 href={`/${item.toLowerCase().replace(' ', '-')}`}
