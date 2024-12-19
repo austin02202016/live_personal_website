@@ -1,13 +1,19 @@
 'use client'
 
-
-
-
 import React from 'react'
 import { ChevronDown } from 'lucide-react'
-
+import { motion } from "framer-motion";
+import { useState, useEffect } from 'react'
 
 export function AboutMeSection() {
+
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+      const timer = setTimeout(() => setIsVisible(true), 500);
+      return () => clearTimeout(timer);
+    }, []);
+    
     const timelineEvents = [
     { year: 2003, event: 'Born in Elmwood Park to some great parents. Shoutout Mom and Dad' },
     { year: 2018, event: 'Graduated from St. Celestine Elementary, started playing baseball at Illinois Travel Baseball Club in Mount Prospect. Played pretty much every sport in 8th grade - baseball, basketball, hockey, soccer, track and field, cross-country, and bowling' },
@@ -19,10 +25,17 @@ export function AboutMeSection() {
     { year: 2024, event: 'Interned at Innovo Markets and transitioned to a consultant role thereafter, ran a marathon, helped with the founding and growth of Illini Run Club, started recording short-form reels for Proof of Concept' },
     ];
 
-  return (
-    <div className="min-h-screen bg-white text-black font-sans">
-      <div className="container mx-auto px-[10%] py-16">
-        <h1 className="text-6xl font-bold mb-8 text-center">Deep Dive About Me</h1>
+    return (
+      <div className="min-h-screen bg-white text-black font-sans">
+        <div className="container mx-auto px-[10%] py-16">
+          <motion.h2 
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 text-center mb-24"
+            initial={{ opacity: 0, y: -20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+          >
+            Deep Dive About Me
+          </motion.h2>
         <p className="text-xl mb-12 text-center max-w-2xl mx-auto">
           Here&#39;s a detailed description of my life. Long story short - I&#39;ve been down a lot of different rabbit holes.
         </p>
@@ -41,7 +54,7 @@ export function AboutMeSection() {
                 </div>
                 <div className="pb-8">
                   <p className="text-2xl font-bold">{item.year}</p>
-                  <p className="text-gray-600">{item.event}</p>
+                  <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: item.event }}></p>
                 </div>
               </div>
             ))}
@@ -51,4 +64,3 @@ export function AboutMeSection() {
     </div>
   )
 }
-

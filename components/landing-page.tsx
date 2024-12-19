@@ -74,6 +74,7 @@ export default function LandingPage() {
             <h2 className="text-2xl font-bold text-center">What I&apos;m up to these days</h2>
             <ul className="list-disc pl-5 space-y-2 text-sm">
               <li>Promoting college entrepreneurship through <a href="https://open.spotify.com/show/6s4SW9OcCX16BCgEXStCJo" className="text-gray-400 hover:underline">Proof of Concept</a>, my podcast and media company</li>
+              <li>Venture Scout for <a href="https://somacap.com/" className="text-gray-400 hover:underline">Soma Capital</a></li>
               <li>Media and branding consultant for <a href="https://www.innovomarkets.com/" className="text-gray-400 hover:underline">Innovo Markets</a></li>
               <li>Helping grow and secure partnerships for <a href="https://www.instagram.com/illinirunclub/" className="text-gray-400 hover:underline">Illini Run Club</a></li>
               <li>Member of <a href="https://www.pct-illinois.com/" className="text-gray-400 hover:underline">Phi Chi Theta Professional Business Fraternity</a></li>
