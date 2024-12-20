@@ -18,7 +18,7 @@ export default function HeroSection() {
     "consulting for Innovo",
     "growing Robo",
     "scouting for Soma Capital",
-    "training to complete my first dunk",
+    "2 inches from my first dunk",
     "growing Illini Run Club",
     "coding cool stuff"
   ]

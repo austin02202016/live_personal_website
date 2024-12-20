@@ -42,7 +42,7 @@ export function NavbarComponent() {
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-1">
-            {['Short-Form', 'Coding Projects', 'My Life'].map((item) => (
+            {['Short-Form', 'Coding Projects', 'Podcasts', 'My Life'].map((item) => (
               <Link
                 key={item}
                 href={`/${item.toLowerCase().replace(' ', '-')}`}
@@ -57,7 +57,7 @@ export function NavbarComponent() {
         {/* Mobile Menu */}
         {menuOpen && (
           <div className="md:hidden mt-2">
-            {['Short-Form', 'Coding Projects', 'My Life'].map((item) => (
+            {['Short-Form', 'Coding Projects', 'Podcasts', 'My Life'].map((item) => (
               <Link
                 key={item}
                 href={`/${item.toLowerCase().replace(' ', '-')}`}
