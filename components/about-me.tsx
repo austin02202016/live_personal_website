@@ -24,9 +24,9 @@ export function AboutMeSection() {
 
     return (
       <motion.div className="min-h-screen bg-white text-black font-sans" ref={ref}>
-        <motion.div className="container mx-auto px-[10%] py-16">
+        <motion.div className="container mx-auto px-[10%] py-24">
           <motion.h2 
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 text-center mb-20"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 text-center mb-24"
             initial={{ opacity: 0, y: -20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}

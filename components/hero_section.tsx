@@ -14,11 +14,13 @@ const BackgroundIcon = ({ Icon, gridArea }: { Icon: React.ElementType, gridArea:
 
 export default function HeroSection() {
   const activities = [
-    "growing UIUC's entrepreneurship community",
-    "consulting for pre-seed startup Innovo",
+    "meeting college entrepreneurs",
+    "consulting for Innovo",
+    "growing Robo",
+    "scouting for Soma Capital",
     "training to complete my first dunk",
     "growing Illini Run Club",
-    "working on personal coding projects"
+    "coding cool stuff"
   ]
 
   const [currentActivity, setCurrentActivity] = useState(0)

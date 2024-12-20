@@ -14,10 +14,9 @@ const projects = [
   {
     id: "uiuc.io",
     title: "Oskee",
-    description: "chatbot matching prompts with UIUC students, built with Andrew Yatzkan",
+    description: "AI chatbot that searches directory of student entrepreneurs, built with Andrew Yatzkan",
     image: "/uiuc.io_photo.png",
     liveUrl: "https://www.uiuc.io/",
-    githubUrl: "https://github.com/austin02202016/uiuc_sage.git",
     tags: ["Next.js", "TailwindCSS", "MongoDB", "Digital Ocean", "Open AI"],
   },
   {
@@ -26,16 +25,15 @@ const projects = [
     description: "first time I built something in next.js, also the website your currently scrolling through :)",
     image: "/personal_website_photo.png",
     liveUrl: "https://austinkennedy.vercel.app/",
-    githubUrl: "https://github.com/austin02202016/react_10.7_website",
+    githubUrl: "https://github.com/austin02202016/live_personal_website",
     tags: ["Next.js", "React.js", "Vercel", "TailwindCSS"],
   },
   {
     id: "capital_club_landing_page",
     title: "The Capital Club",
-    description: "landing page and 'new subscriber' workflows for The Capital Club newsletter",
+    description: "Beehiv workaround to collect multiple data points for new subscribers",
     image: "/capital_club_photo.png",
     liveUrl: "https://casper-landing-page.vercel.app/",
-    githubUrl: "https://github.com/austin02202016/casper-landing_page",
     tags: ["Next.js", "TailwindCSS", "React.js", "Beehiv API", "Vercel"],
   },
 ]
