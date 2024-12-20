@@ -290,7 +290,7 @@ export function PodcastsSection() {
         animate={isVisible ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        These are some of the folks I've interviwed
+        These are some of the folks I&#39;ve interviewed
       </motion.p>
         {podcastCategories.map((category, categoryIndex) => (
           <div key={category.title} className="mb-16 text-center">
