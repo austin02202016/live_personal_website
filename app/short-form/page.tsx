@@ -1,5 +1,4 @@
-import { ReelsPortfolioComponent } from "@/components/reels-portfolio"
-import { StatsSectionComponent } from "@/components/stats-section"
+import { ShortFormContentSection } from "@/components/short-form-section"
 import { NavbarComponent } from "@/components/navbar"
 
 
@@ -7,8 +6,7 @@ export default function Page() {
   return (
     <main className="min-h-screen">
       <NavbarComponent />
-      <StatsSectionComponent />
-      <ReelsPortfolioComponent />
+      <ShortFormContentSection />
     </main>
   )
 }

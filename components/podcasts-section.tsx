@@ -277,13 +277,21 @@ export function PodcastsSection() {
     <section id="podcasts" className="w-full py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <motion.h1 
-          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 text-center mb-16"
+          className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 text-center mb-8"
           initial={{ opacity: 0, y: -20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
           Podcasts
         </motion.h1>
+        <motion.p
+        className="text-xl text-gray-600 text-center mt-4 mb-12"
+        initial={{ opacity: 0, y: -10 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        These are some of the folks I've interviwed
+      </motion.p>
         {podcastCategories.map((category, categoryIndex) => (
           <div key={category.title} className="mb-16 text-center">
             <motion.h2 
