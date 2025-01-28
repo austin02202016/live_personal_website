@@ -2,7 +2,7 @@
 
 import { CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, LinkIcon } from 'lucide-react'
+import { LinkIcon } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion";
@@ -20,13 +20,20 @@ const projects = [
     tags: ["Next.js", "TailwindCSS", "MongoDB", "Digital Ocean", "Open AI"],
   },
   {
-    id: "personal_website",
-    title: "Personal Website",
-    description: "first time I built something in next.js, also the website your currently scrolling through :)",
-    image: "/personal_website_photo.png",
-    liveUrl: "https://austinkennedy.vercel.app/",
-    githubUrl: "https://github.com/austin02202016/live_personal_website",
-    tags: ["Next.js", "React.js", "Vercel", "TailwindCSS"],
+    id: "innovo_markets",
+    title: "Innovo Markets",
+    description: "website for climatetech startup, data collection through Hubspot's API",
+    image: "/innovo-markets.png",
+    liveUrl: "https://innovomarkets.com",
+    tags: ["Next.js", "TailwindCSS", "React.js", "Hubspot API", "Vercel"],
+  },
+  {
+    id: "write-like-them",
+    title: "Write Like Them",
+    description: "helps copywriting agencies convert voice memos/text files to content",
+    image: "/write-like.png",
+    liveUrl: "https://writelikethem-frontend.vercel.app",
+    tags: ["Next.js", "Python", "Assembly API", "Ubuntu", "Flask", "Vercel",],
   },
   {
     id: "capital_club_landing_page",
@@ -104,17 +111,7 @@ export function ProjectsSection() {
                       <LinkIcon className="h-5 w-5 mr-2" />
                       <span>Visit</span>
                     </Link>
-                    {project.githubUrl && (
-                      <Link
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center text-gray-600 hover:text-gray-900 transition-colors"
-                      >
-                        <Github className="h-5 w-5 mr-2" />
-                        <span>Code</span>
-                      </Link>
-                    )}
+                    
                   </div>
                 </div>
               </CardContent>
